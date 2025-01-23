@@ -1,0 +1,65 @@
+volumes:
+    postgres:
+        name: 'postgres16'
+        driver: local
+
+    redis:
+        driver: local
+
+networks:
+    nw:
+        driver: bridge
+
+services:
+    db:
+        image: lifetracker-postgresql
+        environment:
+            - POSTGRES_USER=lifetracker
+            - POSTGRES_PASSWORD=lifetracker
+            - POSTGRES_DB=lifetracker
+        ports:
+            - 5432:5432
+        volumes:
+            - postgres:/var/lib/postgresql/data
+        networks:
+            - nw
+
+    redis:
+        image: redis:7.4
+        ports:
+            - 6379:6379
+        volumes:
+            - redis:/data
+        networks:
+            - nw
+
+    mailer:
+        image: mailhog/mailhog:v1.0.1
+        ports:
+            - 1025:1025
+            - 8025:8025
+        networks:
+            - nw
+
+    frontend:
+        image: lifetracker-nextjs
+        ports:
+            - 3000:3000
+        user: node
+        volumes:
+            - ./frontend:/srv/www/frontend
+        networks:
+            - nw
+
+    backend:
+        image: lifetracker-laravel
+        depends_on:
+            - db
+            - redis
+            - mailer
+        ports:
+            - 5000:5000
+        volumes:
+            - ./backend:/srv/www/backend
+        networks:
+            - nw

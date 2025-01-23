@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+echo "Building 'ubuntu' base images"
+docker image build --pull --force-rm --no-cache -t 'lifetracker-ubuntu' ubuntu/
+
+echo "Building 'php' base images"
+docker image build --force-rm --no-cache -t 'lifetracker-php' php/
+
+echo "Building 'php xdebug' base images"
+docker image build --force-rm --no-cache -t 'lifetracker-php-xdebug' php/xdebug/
+
+echo "Building 'node' base images"
+docker image build --pull --force-rm --no-cache -t 'lifetracker-node' node/
+
+echo "Building 'postgresql' base images"
+docker image build --pull --force-rm --no-cache -t 'lifetracker-postgresql' postgresql/
+
+echo "Building 'laravel' images"
+docker image build --force-rm --no-cache -t 'lifetracker-laravel' laravel/
+
+echo "Building 'laravel xdebug' images"
+docker image build --force-rm --no-cache -t 'lifetracker-laravel-xdebug' laravel/xdebug/
+<za
+echo "Building 'nextjs' images"
+docker image build --force-rm --no-cache -t 'lifetracker-nextjs' nextjs/
