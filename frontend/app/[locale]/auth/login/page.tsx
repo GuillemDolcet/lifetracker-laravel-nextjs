@@ -8,7 +8,7 @@ import Link from 'next/link'
 import {useAuth} from '@/hooks/auth'
 import {useEffect, useState} from 'react'
 import {useRouter} from 'next/navigation'
-import AuthSessionStatus from '@/app/auth/AuthSessionStatus'
+import AuthSessionStatus from '@/app/[locale]/auth/AuthSessionStatus'
 import {IconMail, IconKey} from '@tabler/icons-react'
 
 const Login = () => {

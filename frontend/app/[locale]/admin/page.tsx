@@ -1,4 +1,4 @@
-import Header from '@/app/admin/Header'
+import Header from '@/app/[locale]/admin/Header'
 
 export const metadata = {
     title: 'Laravel - Dashboard',
