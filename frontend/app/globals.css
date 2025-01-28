@@ -1,21 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "@tabler/core";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400; /* Regular */
+    src: url('/fonts/inter/Inter-Regular.ttf') format('truetype');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700; /* Bold */
+    src: url('/fonts/inter/Inter-Bold.ttf') format('truetype');
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
 }

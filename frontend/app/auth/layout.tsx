@@ -1,25 +1,23 @@
-import Link from 'next/link'
-import AuthCard from '@/app/auth/AuthCard'
 import ApplicationLogo from '@/components/ApplicationLogo'
+import ThemeToggle from "@/components/ThemeToggle";
 
 export const metadata = {
     title: 'Laravel',
 }
 
-const Layout = ({ children }) => {
+const Layout = ({children}) => {
     return (
-        <div>
-            <div className="text-gray-900 antialiased">
-                <AuthCard
-                    logo={
-                        <Link href="/">
-                            <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
-                        </Link>
-                    }>
+        <>
+            <ThemeToggle/>
+            <div className="page page-center border-primary">
+                <div className="container py-4 ">
+                    <div className="text-center mb-4">
+                        <ApplicationLogo/>
+                    </div>
                     {children}
-                </AuthCard>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
