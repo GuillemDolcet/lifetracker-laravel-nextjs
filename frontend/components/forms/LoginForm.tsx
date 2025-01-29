@@ -11,6 +11,8 @@ import {useRouter} from 'next/navigation'
 import AuthSessionStatus from '@/app/[locale]/auth/AuthSessionStatus'
 import {IconMail, IconKey} from '@tabler/icons-react'
 import {useTranslations} from "next-intl"
+import {GoogleOAuthProvider} from "@react-oauth/google";
+import GoogleLogin from "@/components/socials/GoogleLogin";
 
 export default function LoginForm() {
     const translations = useTranslations('Auth')
@@ -112,7 +114,9 @@ export default function LoginForm() {
                         <span className="ml-2 text-sm text-gray-600">{translations('remember_me')}</span>
                     </label>
                 </div>
-
+                <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>
+                    <GoogleLogin/>
+                </GoogleOAuthProvider>
                 <div className="flex items-center justify-end mt-4">
                     <Link
                         href="/forgot-password"

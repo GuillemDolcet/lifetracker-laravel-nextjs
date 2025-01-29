@@ -1,7 +1,8 @@
 import useSWR from 'swr'
 import axios from '@/lib/axios'
 import { useEffect } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams } from 'next/navigation'
+import {useRouter} from '@/i18n/routing';
 
 export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const router = useRouter()
@@ -96,7 +97,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             await axios.post('/logout').then(() => mutate())
         }
 
-        window.location.pathname = '/auth/login'
+        router.push('/auth/login')
     }
 
     useEffect(() => {
@@ -107,7 +108,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             router.push('/auth/verify-email')
 
         if (
-            window.location.pathname === '/auth/verify-email' &&
+            window.location.pathname.includes('/auth/verify-email') &&
             user?.email_verified_at
         )
             router.push(redirectIfAuthenticated)

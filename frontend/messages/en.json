@@ -5,6 +5,7 @@
     "placeholder_password": "Enter the password",
     "remember_me": "Remember me",
     "forgot_password": "Forgot password ?",
-    "login": "Login"
+    "login": "Login",
+    "login_google": "Login with Google"
   }
 }
