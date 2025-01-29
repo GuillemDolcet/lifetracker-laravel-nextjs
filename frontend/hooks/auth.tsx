@@ -52,6 +52,17 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             })
     }
 
+    const loginWithGoogle = async ({ ...props }) => {
+        await csrf()
+
+        axios
+            .post('/login/google', props)
+            .then(() => mutate())
+            .catch(error => {
+                if (error.response.status !== 422) throw error
+            })
+    }
+
     const forgotPassword = async ({ setErrors, setStatus, email }) => {
         await csrf()
 
@@ -119,6 +130,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         user,
         register,
         login,
+        loginWithGoogle,
         forgotPassword,
         resetPassword,
         resendEmailVerification,

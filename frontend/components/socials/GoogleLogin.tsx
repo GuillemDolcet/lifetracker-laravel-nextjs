@@ -1,18 +1,24 @@
 import { useGoogleLogin } from "@react-oauth/google";
 import Image from "next/image";
 import {useTranslations} from "next-intl";
+import {useAuth} from '@/hooks/auth'
 
 export default function GoogleLogin() {
     const translations = useTranslations('Auth')
 
-    const handleLogin = (credentialResponse) => {
-        // Este es el token JWT que obtenemos
-        const token = credentialResponse.credential;
+    const {loginWithGoogle} = useAuth({
+        middleware: 'guest',
+        redirectIfAuthenticated: '/admin',
+    })
 
+    const handleLogin = (credentialResponse) => {
         // Decodificamos el token para obtener los datos del usuario
-        console.log("Datos del usuario:", token);
+        console.log("Datos del usuario:", credentialResponse.access_token);
 
         // Aquí puedes realizar otras acciones como guardar los datos en tu backend
+        loginWithGoogle({
+            token: credentialResponse.access_token,
+        })
     };
 
     const handleLoginError = (err) => {
