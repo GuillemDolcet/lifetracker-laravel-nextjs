@@ -7,9 +7,7 @@ const Login = () => {
         <>
             <div className="container-tight">
                 <div className="card card-md">
-                    <div className="card-body">
-                        <LoginForm/>
-                    </div>
+                    <LoginForm/>
                 </div>
             </div>
         </>

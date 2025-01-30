@@ -1,11 +1,19 @@
 {
   "Auth": {
     "login_to_your_account": "Acceda a su cuenta",
-    "placeholder_email": "Introduzca su correo electrónico",
-    "placeholder_password": "Introduzca su contraseña",
+    "placeholder_email": "tu@email.com",
+    "placeholder_password": "Tu contraseña",
     "remember_me": "Recuérdame",
-    "forgot_password": "¿Olvidó su contraseña?",
+    "forgot_password": "He olvidado la contraseña",
     "login": "Iniciar sesión",
-    "login_google": "Iniciar sesión con Google"
+    "login_google": "Iniciar sesión con Google",
+    "login_github": "Iniciar sesión con Github",
+    "sign_up": "Sign up",
+    "sign_in": "Sign in",
+    "password": "Contraseña",
+    "email": "Correo electronico"
+  },
+  "Errors" : {
+    "These credentials do not match our records" : "Estas credenciales no coinciden con nuestros registros."
   }
 }

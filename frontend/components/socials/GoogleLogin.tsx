@@ -2,8 +2,12 @@ import { useGoogleLogin } from "@react-oauth/google";
 import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {useAuth} from '@/hooks/auth'
+import {useEffect, useState} from "react";
+import toast from "react-hot-toast";
 
 export default function GoogleLogin() {
+    const [errors, setErrors] = useState([])
+
     const translations = useTranslations('Auth')
 
     const {loginWithGoogle} = useAuth({
@@ -12,17 +16,14 @@ export default function GoogleLogin() {
     })
 
     const handleLogin = (credentialResponse) => {
-        // Decodificamos el token para obtener los datos del usuario
-        console.log("Datos del usuario:", credentialResponse.access_token);
-
-        // Aquí puedes realizar otras acciones como guardar los datos en tu backend
         loginWithGoogle({
+            setErrors,
             token: credentialResponse.access_token,
         })
     };
 
     const handleLoginError = (err) => {
-        console.log("Error al iniciar sesión", err);
+        toast.error(err)
     };
 
     const login = useGoogleLogin({
@@ -30,9 +31,19 @@ export default function GoogleLogin() {
         onError: handleLoginError,
     });
 
+    useEffect(() => {
+        if (!errors || Object.keys(errors).length === 0) return;
+
+        if (typeof errors === 'object') {
+            Object.values(errors).flat().forEach(error => toast.error(error));
+        }
+    }, [errors])
+
     return (
-        <button onClick={() => login()} className="btn w-100">
-            <Image src="/google.svg" width="24" height="24" alt="google" className="me-2"/> {translations('login_google')}
-        </button>
+        <>
+            <a onClick={() => login()} className="btn btn-4 w-100">
+                <Image src="/google.svg" width="18" height="18" alt="google" className="me-2"/> {translations('login_google')}
+            </a>
+        </>
     );
 }

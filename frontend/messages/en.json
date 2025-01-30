@@ -1,11 +1,19 @@
 {
   "Auth": {
     "login_to_your_account": "Login to your account",
-    "placeholder_email": "Enter the user",
-    "placeholder_password": "Enter the password",
+    "placeholder_email": "your@email.com",
+    "placeholder_password": "Your password",
     "remember_me": "Remember me",
-    "forgot_password": "Forgot password ?",
+    "forgot_password": "I forgot password",
     "login": "Login",
-    "login_google": "Login with Google"
+    "login_google": "Login with Google",
+    "login_github": "Login with Github",
+    "sign_up": "Sign up",
+    "sign_in": "Sign in",
+    "password": "Password",
+    "email": "Email address"
+  },
+  "Errors" : {
+    "These credentials do not match our records" : "These credentials do not match our records."
   }
 }

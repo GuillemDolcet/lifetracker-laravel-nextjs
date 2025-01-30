@@ -1,7 +1,14 @@
 const Loading = () => {
     return (
-        <div className="flex min-h-screen w-full items-center justify-center bg-gray-100">
-            Loading...
+        <div className="page">
+            <div className="container container-slim py-4">
+                <div className="text-center">
+                    <div className="text-secondary mb-3">Preparing application</div>
+                    <div className="progress progress-sm">
+                        <div className="progress-bar progress-bar-indeterminate"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
