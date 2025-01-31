@@ -3,6 +3,8 @@
     "login_to_your_account": "Login to your account",
     "placeholder_email": "your@email.com",
     "placeholder_password": "Your password",
+    "placeholder_confirm_password": "Confirm your password",
+    "placeholder_name": "Your name",
     "remember_me": "Remember me",
     "forgot_password": "I forgot password",
     "forgot_password_description": "Enter your email address and we will send you a password reset link.",
@@ -14,7 +16,12 @@
     "password": "Password",
     "email": "Email address",
     "dont_have_account_yet": "Don't have account yet?",
-    "send_reset_link": "Send me the reset link"
+    "send_reset_link": "Send me the reset link",
+    "send_me_back": "send me back",
+    "forget_it": "Forget it",
+    "to_the_sign_in": "to the sign in screen.",
+    "have_account_?": "Already have account?",
+    "create_account": "Create new account"
   },
   "Errors" : {
     "These credentials do not match our records" : "These credentials do not match our records."

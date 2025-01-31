@@ -46,7 +46,9 @@ export default function ForgotPasswordForm() {
                     />
                 </div>
                 <div className="flex items-center justify-end mt-4">
-                    <Button type="submit" className="btn-primary w-100"><IconMail stroke={2} className="me-2"/>{translations('send_reset_link')}</Button>
+                    <Button type="submit" className="btn-primary w-100">
+                        <IconMail stroke={2} className="me-2"/>{translations('send_reset_link')}
+                    </Button>
                 </div>
             </form>
         </>

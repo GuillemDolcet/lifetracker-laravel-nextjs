@@ -41,7 +41,7 @@ export default function GoogleLogin() {
     return (
         <>
             <a onClick={() => login()} className="btn btn-4 w-100">
-                <Image src="/google.svg" width="18" height="18" alt="google" className="me-2"/> {translations('login_google')}
+                <Image src="/images/google.svg" width="18" height="18" alt="google" className="me-2"/> {translations('login_google')}
             </a>
         </>
     );

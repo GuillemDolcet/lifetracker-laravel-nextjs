@@ -10,10 +10,13 @@
 @font-face {
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 700; /* Bold */
-    src: url('/fonts/inter/Inter-Bold.ttf') format('truetype');
+    font-weight: 500; /* Bold */
+    src: url('/fonts/inter/Inter-SemiBold.ttf') format('truetype');
 }
 
-body {
-    font-family: 'Inter', sans-serif;
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700; /* Bold */
+    src: url('/fonts/inter/Inter-Bold.ttf') format('truetype');
 }

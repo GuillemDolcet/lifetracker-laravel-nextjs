@@ -5,6 +5,7 @@ import {useTranslations} from "next-intl"
 import {GoogleOAuthProvider} from "@react-oauth/google";
 import GoogleLogin from "@/components/socials/GoogleLogin";
 import {Link} from '@/i18n/routing';
+import CardTitle from "@/components/CardTitle";
 
 const Login = () => {
     const translations = useTranslations('Auth')
@@ -13,7 +14,7 @@ const Login = () => {
             <div className="container-tight">
                 <div className="card card-md">
                     <div className="card-body">
-                        <h2 className="h2 text-center mb-4">{translations('login_to_your_account')}</h2>
+                        <CardTitle>{translations('login_to_your_account')}</CardTitle>
                         <LoginForm/>
                     </div>
                     <div className="hr-text w-100">or</div>

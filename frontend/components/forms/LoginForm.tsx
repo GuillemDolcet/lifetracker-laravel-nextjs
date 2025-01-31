@@ -50,7 +50,7 @@ export default function LoginForm() {
             <form onSubmit={submitForm}>
                 {/* Email */}
                 <div className="mb-3">
-                    <Label htmlFor="email" className="form-label bold">
+                    <Label htmlFor="email" className="form-label">
                         {translations('email')}
                     </Label>
                     <Input
@@ -68,7 +68,7 @@ export default function LoginForm() {
 
                 {/* Password */}
                 <div className="mb-2">
-                    <Label htmlFor="password" className="form-label bold">
+                    <Label htmlFor="password" className="form-label">
                         {translations('password')}
                         <span className="form-label-description">
                               <Link href="/auth/forgot-password"
@@ -91,21 +91,21 @@ export default function LoginForm() {
                 </div>
 
                 {/* Remember Me */}
-                <div className="block mt-4">
-                    <label
+                <div>
+                    <Label
                         htmlFor="remember_me"
-                        className="inline-flex items-center">
-                        <input
+                        className="form-check">
+                        <Input
                             id="remember_me"
                             type="checkbox"
                             name="remember"
-                            className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                            className="form-check-input"
                             onChange={event =>
                                 setShouldRemember(event.target.checked)
                             }
                         />
-                        <span className="ml-2 text-sm text-gray-600">{translations('remember_me')}</span>
-                    </label>
+                        <span className="form-check-label">{translations('remember_me')}</span>
+                    </Label>
                 </div>
                 <div className="flex items-center justify-end mt-4">
                     <Button type="submit" className="btn-primary w-100">{translations('sign_in')}</Button>
