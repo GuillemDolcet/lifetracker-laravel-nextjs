@@ -5,13 +5,16 @@
     "placeholder_password": "Your password",
     "remember_me": "Remember me",
     "forgot_password": "I forgot password",
+    "forgot_password_description": "Enter your email address and we will send you a password reset link.",
     "login": "Login",
     "login_google": "Login with Google",
     "login_github": "Login with Github",
     "sign_up": "Sign up",
     "sign_in": "Sign in",
     "password": "Password",
-    "email": "Email address"
+    "email": "Email address",
+    "dont_have_account_yet": "Don't have account yet?",
+    "send_reset_link": "Send me the reset link"
   },
   "Errors" : {
     "These credentials do not match our records" : "These credentials do not match our records."

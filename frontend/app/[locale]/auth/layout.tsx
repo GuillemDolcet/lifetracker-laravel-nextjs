@@ -13,7 +13,7 @@ const Layout = ({children}) => {
                     <ThemeToggle/>
                 </div>
                 <div className="container justify-content-center py-4 mt-auto mb-auto">
-                    <div className="text-center mb-4">
+                    <div className="text-center mb-2">
                         <ApplicationLogo/>
                     </div>
                     {children}

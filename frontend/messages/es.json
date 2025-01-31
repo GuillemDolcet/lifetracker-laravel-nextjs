@@ -11,7 +11,8 @@
     "sign_up": "Sign up",
     "sign_in": "Sign in",
     "password": "Contraseña",
-    "email": "Correo electronico"
+    "email": "Correo electronico",
+    "dont_have_account_yet": "Aún no tienes una cuenta?"
   },
   "Errors" : {
     "These credentials do not match our records" : "Estas credenciales no coinciden con nuestros registros."
