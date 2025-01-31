@@ -3,7 +3,6 @@ import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {useAuth} from '@/hooks/auth'
 import {useEffect, useState} from "react";
-import toast from "react-hot-toast";
 
 export default function GoogleLogin() {
     const [errors, setErrors] = useState([])

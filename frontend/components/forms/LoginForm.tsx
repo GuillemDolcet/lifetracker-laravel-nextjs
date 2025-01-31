@@ -10,7 +10,6 @@ import {useRouter} from 'next/navigation'
 import {useTranslations} from "next-intl"
 import {GoogleOAuthProvider} from "@react-oauth/google";
 import GoogleLogin from "@/components/socials/GoogleLogin";
-import toast from "react-hot-toast";
 
 export default function LoginForm() {
     const translations = useTranslations('Auth')
