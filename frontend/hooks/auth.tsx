@@ -15,7 +15,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             .catch(error => {
                 if (error.response.status !== 409) throw error
 
-                router.push('/auth/verify-email')
+                router.push('/admin')
             }),
     )
 
@@ -101,12 +101,6 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             })
     }
 
-    const resendEmailVerification = ({ setStatus }) => {
-        axios
-            .post('/email/verification-notification')
-            .then(response => setStatus(response.data.status))
-    }
-
     const logout = async () => {
         if (!error) {
             await axios.post('/logout').then(() => mutate())
@@ -119,14 +113,6 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         if (middleware === 'guest' && redirectIfAuthenticated && user)
             router.push(redirectIfAuthenticated)
 
-        if (middleware === 'auth' && !user?.email_verified_at)
-            router.push('/auth/verify-email')
-
-        if (
-            window.location.pathname.includes('/auth/verify-email') &&
-            user?.email_verified_at
-        )
-            router.push(redirectIfAuthenticated)
         if (middleware === 'auth' && error) logout()
     }, [user, error])
 
@@ -137,7 +123,6 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         loginWithGoogle,
         forgotPassword,
         resetPassword,
-        resendEmailVerification,
         logout,
     }
 }
