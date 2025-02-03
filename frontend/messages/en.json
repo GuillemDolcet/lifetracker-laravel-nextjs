@@ -23,6 +23,10 @@
     "have_account_?": "Already have account?",
     "create_account": "Create new account"
   },
+  "Idioms" : {
+    "en": "English",
+    "es": "Spanish"
+  },
   "Errors" : {
     "These credentials do not match our records" : "These credentials do not match our records."
   }

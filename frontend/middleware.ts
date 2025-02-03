@@ -7,5 +7,5 @@ export default createMiddleware({
 });
 
 export const config = {
-    matcher: ["/", "/((?!_next|api|admin|images|fonts|favicon).*)"], // Incluir `/` explícitamente
+    matcher: ["/", "/((?!_next|api|images|fonts|favicon).*)"], // Incluir `/` explícitamente
 };
