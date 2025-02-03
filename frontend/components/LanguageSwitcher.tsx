@@ -39,12 +39,15 @@ export default function LanguageSwitcher({ className }) {
                 <Image src={`/images/${locale}.png`} width="32" height="32" alt={locale}/>
             </a>
             <div className={"dropdown-menu dropdown-menu-end dropdown-menu-arrow language-switcher " + (show ? 'show' : '')}>
-                {routing.locales.map((cur) => (
-                    <div className="dropdown-item" key={cur} onClick={() => onSelectChange(cur)} disabled={isPending}>
-                        <Image src={`/images/${cur}.png`} width="32" height="32" alt={cur}/>
-                        <div className="fw-medium ms-2">{translations(cur)}</div>
-                    </div>
-                ))}
+                {routing.locales
+                    .filter((cur) => cur !== locale)
+                    .map((cur) => (
+                        <div className="dropdown-item" key={cur} onClick={() => onSelectChange(cur)} disabled={isPending}>
+                            <Image src={`/images/${cur}.png`} width="32" height="32" alt={cur}/>
+                            <div className="fw-medium ms-2">{translations(cur)}</div>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
