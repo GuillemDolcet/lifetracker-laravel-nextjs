@@ -1,21 +1,16 @@
 import { useGoogleLogin } from "@react-oauth/google";
 import Image from "next/image";
 import {useTranslations} from "next-intl";
-import {useAuth} from '@/hooks/auth'
 import {useEffect, useState} from "react";
+import { toast } from 'react-toastify';
 
-export default function GoogleLogin() {
+export default function GoogleLogin({submitRequest}) {
     const [errors, setErrors] = useState([])
 
     const translations = useTranslations('Auth')
 
-    const {loginWithGoogle} = useAuth({
-        middleware: 'guest',
-        redirectIfAuthenticated: '/admin',
-    })
-
     const handleLogin = (credentialResponse) => {
-        loginWithGoogle({
+        submitRequest({
             setErrors,
             token: credentialResponse.access_token,
         })

@@ -19,9 +19,7 @@ export default function Input({ disabled = false, className, errors, set, setErr
 
         // Clear the error for the specific field when the value changes
         setErrors((prevErrors) => {
-            console.log(prevErrors);
             const newErrors = { ...prevErrors };
-            console.log(newErrors[name]);
             delete newErrors[name]; // Remove the error for the specific field using the 'name' prop
             return newErrors;
         });

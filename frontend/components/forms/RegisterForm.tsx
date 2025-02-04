@@ -3,17 +3,11 @@
 import Button from '@/components/Button'
 import Input from '@/components/Input'
 import Label from '@/components/Label'
-import { useAuth } from '@/hooks/auth'
 import { useState } from 'react'
 import {useTranslations} from "next-intl"
 
-const RegisterForm = () => {
+export default function RegisterForm ({submitRequest}) {
     const translations = useTranslations('Auth')
-
-    const { register } = useAuth({
-        middleware: 'guest',
-        redirectIfAuthenticated: '/admin',
-    })
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -24,7 +18,7 @@ const RegisterForm = () => {
     const submitForm = event => {
         event.preventDefault()
 
-        register({
+        submitRequest({
             name,
             email,
             password,
@@ -111,5 +105,3 @@ const RegisterForm = () => {
         </form>
     )
 }
-
-export default RegisterForm

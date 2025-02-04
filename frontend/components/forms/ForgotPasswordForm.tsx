@@ -3,20 +3,14 @@
 import Button from '@/components/Button'
 import Input from '@/components/Input'
 import Label from '@/components/Label'
-import {useAuth} from '@/hooks/auth'
 import {useState} from 'react'
 import {useTranslations} from "next-intl"
 import {IconMail} from "@tabler/icons-react";
 import { toast } from 'react-toastify';
 
-export default function ForgotPasswordForm() {
+export default function ForgotPasswordForm({submitRequest}) {
     const translations = useTranslations('Auth')
     const translationsSucess = useTranslations('Success')
-
-    const { forgotPassword } = useAuth({
-        middleware: 'guest',
-        redirectIfAuthenticated: '/admin',
-    })
 
     const [email, setEmail] = useState('')
     const [errors, setErrors] = useState([])
@@ -24,7 +18,7 @@ export default function ForgotPasswordForm() {
     const submitForm = event => {
         event.preventDefault()
 
-        forgotPassword({ email, setErrors, handleResponse })
+        submitRequest({ email, setErrors, handleResponse })
     }
 
     function handleResponse(response) {

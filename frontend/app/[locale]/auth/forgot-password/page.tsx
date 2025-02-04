@@ -5,8 +5,14 @@ import {useTranslations} from "next-intl"
 import CardTitle from "@/components/CardTitle";
 import CardDescription from "@/components/CardDescription";
 import {Link} from "@/i18n/routing";
+import {useAuth} from "@/hooks/auth";
 
 const Page = () => {
+    const { forgotPassword } = useAuth({
+        middleware: 'guest',
+        redirectIfAuthenticated: '/admin',
+    })
+
     const translations = useTranslations('Auth')
 
     return (
@@ -16,7 +22,7 @@ const Page = () => {
                     <div className="card-body">
                         <CardTitle>{translations('forgot_password')}</CardTitle>
                         <CardDescription>{translations('forgot_password_description')}</CardDescription>
-                        <ForgotPasswordForm/>
+                        <ForgotPasswordForm submitRequest={forgotPassword}/>
                     </div>
                 </div>
                 <div className="text-center text-secondary mt-3">

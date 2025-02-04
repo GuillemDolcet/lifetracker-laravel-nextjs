@@ -4,20 +4,11 @@ import Button from '@/components/Button'
 import Input from '@/components/Input'
 import Label from '@/components/Label'
 import {Link} from '@/i18n/routing';
-import {useAuth} from '@/hooks/auth'
-import {useEffect, useState} from 'react'
-import {useRouter} from 'next/navigation'
+import {useState} from 'react'
 import {useTranslations} from "next-intl"
 
-export default function LoginForm() {
+export default function LoginForm({submitRequest}) {
     const translations = useTranslations('Auth')
-
-    const router = useRouter()
-
-    const {login} = useAuth({
-        middleware: 'guest',
-        redirectIfAuthenticated: '/admin',
-    })
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -27,7 +18,7 @@ export default function LoginForm() {
     const submitForm = async event => {
         event.preventDefault()
 
-        login({
+        submitRequest({
             email,
             password,
             remember: shouldRemember,
