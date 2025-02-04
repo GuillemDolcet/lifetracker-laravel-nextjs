@@ -41,11 +41,13 @@ const RegisterForm = () => {
                 <Input
                     id="name"
                     type="text"
+                    name="name"
                     value={name}
                     placeholder={translations('placeholder_name')}
                     className="form-control"
                     errors={errors.name}
-                    onChange={event => setName(event.target.value)}
+                    set={setName}
+                    setErrors={setErrors}
                     required
                     autoFocus
                 />
@@ -58,10 +60,12 @@ const RegisterForm = () => {
                     id="email"
                     type="email"
                     value={email}
+                    name="email"
                     placeholder={translations('placeholder_email')}
                     errors={errors.email}
                     className="form-control"
-                    onChange={event => setEmail(event.target.value)}
+                    set={setEmail}
+                    setErrors={setErrors}
                     required
                 />
             </div>
@@ -72,11 +76,13 @@ const RegisterForm = () => {
                 <Input
                     id="password"
                     type="password"
+                    name="password"
                     value={password}
                     placeholder={translations('placeholder_password')}
                     errors={errors.password}
                     className="form-control"
-                    onChange={event => setPassword(event.target.value)}
+                    set={setPassword}
+                    setErrors={setErrors}
                     required
                     autoComplete="new-password"
                 />
@@ -88,13 +94,13 @@ const RegisterForm = () => {
                 <Input
                     id="passwordConfirmation"
                     type="password"
+                    name="password_confirmation"
                     value={passwordConfirmation}
                     placeholder={translations('placeholder_confirm_password')}
                     errors={errors.password_confirmation}
                     className="form-control"
-                    onChange={event =>
-                        setPasswordConfirmation(event.target.value)
-                    }
+                    set={setPasswordConfirmation}
+                    setErrors={setErrors}
                     required
                 />
             </div>

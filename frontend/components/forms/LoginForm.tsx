@@ -23,15 +23,6 @@ export default function LoginForm() {
     const [password, setPassword] = useState('')
     const [shouldRemember, setShouldRemember] = useState(false)
     const [errors, setErrors] = useState([])
-    const [status, setStatus] = useState(null)
-
-    useEffect(() => {
-        if (router.reset?.length > 0 && Array.isArray(errors) && errors.length === 0) {
-            setStatus(atob(router.reset))
-        } else {
-            setStatus(null)
-        }
-    })
 
     const submitForm = async event => {
         event.preventDefault()
@@ -41,7 +32,6 @@ export default function LoginForm() {
             password,
             remember: shouldRemember,
             setErrors,
-            setStatus,
         })
     }
 
@@ -56,11 +46,13 @@ export default function LoginForm() {
                     <Input
                         id="email"
                         type="email"
+                        name="email"
                         value={email}
                         placeholder={translations('placeholder_email')}
                         className="form-control"
                         errors={errors.email}
-                        onChange={event => setEmail(event.target.value)}
+                        set={setEmail}
+                        setErrors={setErrors}
                         required
                         autoFocus
                     />
@@ -80,11 +72,13 @@ export default function LoginForm() {
                     <Input
                         id="password"
                         type="password"
+                        name="password"
                         value={password}
                         placeholder={translations('placeholder_password')}
                         className="form-control"
                         errors={errors.password}
-                        onChange={event => setPassword(event.target.value)}
+                        set={setPassword}
+                        setErrors={setErrors}
                         required
                         autoComplete="current-password"
                     />

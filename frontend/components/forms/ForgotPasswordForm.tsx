@@ -7,9 +7,11 @@ import {useAuth} from '@/hooks/auth'
 import {useState} from 'react'
 import {useTranslations} from "next-intl"
 import {IconMail} from "@tabler/icons-react";
+import { toast } from 'react-toastify';
 
 export default function ForgotPasswordForm() {
     const translations = useTranslations('Auth')
+    const translationsSucess = useTranslations('Success')
 
     const { forgotPassword } = useAuth({
         middleware: 'guest',
@@ -18,12 +20,17 @@ export default function ForgotPasswordForm() {
 
     const [email, setEmail] = useState('')
     const [errors, setErrors] = useState([])
-    const [status, setStatus] = useState(null)
 
     const submitForm = event => {
         event.preventDefault()
 
-        forgotPassword({ email, setErrors, setStatus })
+        forgotPassword({ email, setErrors, handleResponse })
+    }
+
+    function handleResponse(response) {
+        const translatedSuccess = translationsSucess(response.data.status.code);
+
+        toast.success(translatedSuccess !== 'Success.' + response.data.status.code ? translatedSuccess : response.data.status.message)
     }
 
     return (
@@ -40,7 +47,8 @@ export default function ForgotPasswordForm() {
                         errors={errors.email}
                         className="form-control"
                         placeholder={translations('placeholder_email')}
-                        onChange={event => setEmail(event.target.value)}
+                        set={setEmail}
+                        setErrors={setErrors}
                         required
                         autoFocus
                     />

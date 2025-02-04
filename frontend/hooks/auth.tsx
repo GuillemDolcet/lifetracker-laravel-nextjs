@@ -36,11 +36,10 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             })
     }
 
-    const login = async ({ setErrors, setStatus, ...props }) => {
+    const login = async ({ setErrors, ...props }) => {
         await csrf()
 
         setErrors([])
-        setStatus(null)
 
         axios
             .post('/login', props)
@@ -67,15 +66,14 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             })
     }
 
-    const forgotPassword = async ({ setErrors, setStatus, email }) => {
+    const forgotPassword = async ({ setErrors, email, handleResponse }) => {
         await csrf()
 
         setErrors([])
-        setStatus(null)
 
         axios
             .post('/forgot-password', { email })
-            .then(response => setStatus(response.data.status))
+            .then(response => handleResponse(response))
             .catch(error => {
                 if (error.response.status !== 422) throw error
 
@@ -83,11 +81,10 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             })
     }
 
-    const resetPassword = async ({ setErrors, setStatus, ...props }) => {
+    const resetPassword = async ({ setErrors, ...props }) => {
         await csrf()
 
         setErrors([])
-        setStatus(null)
 
         axios
             .post('/reset-password', { token: params.token, ...props })

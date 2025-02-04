@@ -3,6 +3,7 @@ import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import '@/app/globals.css'
+import {ToastContainer} from "react-toastify";
 
 export default async function LocaleLayout({children, params}: {
     children: React.ReactNode;
@@ -22,6 +23,7 @@ export default async function LocaleLayout({children, params}: {
     return (
         <html lang={locale}>
             <body>
+                <ToastContainer />
                 <NextIntlClientProvider messages={messages}>
                     {children}
                 </NextIntlClientProvider>
