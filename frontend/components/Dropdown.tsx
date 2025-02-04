@@ -2,35 +2,12 @@ import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 
 const Dropdown = ({
-                      align = 'right',
-                      width = 48,
                       contentClasses = 'py-1 bg-white',
                       trigger,
                       children,
                   }) => {
-    let alignmentClasses
-
-    switch (width) {
-        case '48':
-            width = 'w-48'
-            break
-    }
-
-    switch (align) {
-        case 'left':
-            alignmentClasses = 'origin-top-left left-0'
-            break
-        case 'top':
-            alignmentClasses = 'origin-top'
-            break
-        case 'right':
-        default:
-            alignmentClasses = 'origin-top-right right-0'
-            break
-    }
-
     return (
-        <Menu as="div" className="relative">
+        <Menu as="div" className="dropdown">
             {({ open }) => (
                 <>
                     <Menu.Button as={Fragment}>{trigger}</Menu.Button>
@@ -44,9 +21,9 @@ const Dropdown = ({
                         leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95">
                         <div
-                            className={`absolute z-50 mt-2 ${width} rounded-md shadow-lg ${alignmentClasses}`}>
+                            className={`dropdown-menu dropdown-menu-end dropdown-menu-arrow show language-switcher`}>
                             <Menu.Items
-                                className={`rounded-md focus:outline-none ring-1 ring-black ring-opacity-5 ${contentClasses}`}
+                                className={`dropdown-item ${contentClasses}`}
                                 static>
                                 {children}
                             </Menu.Items>
