@@ -23,7 +23,7 @@ const Dropdown = ({
                         <div
                             className={`dropdown-menu dropdown-menu-end dropdown-menu-arrow show language-switcher`}>
                             <Menu.Items
-                                className={`dropdown-item ${contentClasses}`}
+                                className={`${contentClasses}`}
                                 static>
                                 {children}
                             </Menu.Items>

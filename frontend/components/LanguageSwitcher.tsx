@@ -32,7 +32,7 @@ export default function LanguageSwitcher({ className }) {
 
     return (
         <Dropdown trigger={
-            <a href="#" className="nav-link d-flex lh-1 text-reset p-0 show me-2">
+            <a href="#" className="nav-link d-flex lh-1 text-reset p-0 show me-3">
                 <Image src={`/images/${locale}.png`} width="32" height="32" alt={locale}/>
             </a>
         }>

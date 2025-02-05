@@ -27,3 +27,6 @@
     margin: 0;
     transform: translate(0px, 34px);
 }
+.container-xxl{
+    max-width: 1700px !important;
+}

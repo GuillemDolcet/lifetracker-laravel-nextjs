@@ -32,7 +32,7 @@ export const DropdownButton = ({ children, ...props }) => (
 export const DropdownText = ({ children, ...props }) => (
     <Menu.Item>
         {({ active }) => (
-            <div className="dropdown-item" {...props}>
+            <div className="dropdown-item cursor-pointer" {...props}>
                 {children}
             </div>
         )}

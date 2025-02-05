@@ -24,7 +24,8 @@
     "sign_in": "Sign in",
     "sign_up": "Sign up",
     "to_the_sign_in": "to the sign in screen.",
-    "forget_it": "Forget it"
+    "forget_it": "Forget it",
+    "logout": "Logout"
   },
   "Errors": {
     "credentials_do_not_match": "These credentials do not match our records.",
