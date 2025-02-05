@@ -1,0 +1,57 @@
+{
+  "Auth": {
+    "create_account": "Crear nueva cuenta",
+    "dont_have_account_yet": "¿Aún no tienes cuenta?",
+    "email": "Dirección de correo electrónico",
+    "forgot_password": "Olvidé mi contraseña",
+    "forgot_password_description": "Ingresa tu dirección de correo electrónico y te enviaremos un enlace para restablecer tu contraseña.",
+    "have_account_?": "¿Ya tienes cuenta?",
+    "login": "Iniciar sesión",
+    "login_google": "Iniciar sesión con Google",
+    "login_github": "Iniciar sesión con Github",
+    "login_to_your_account": "Iniciar sesión en tu cuenta",
+    "password": "Contraseña",
+    "placeholder_email": "tu@email.com",
+    "placeholder_password": "Tu contraseña",
+    "placeholder_confirm_password": "Confirmar tu contraseña",
+    "placeholder_name": "Tu nombre",
+    "remember_me": "Recuérdame",
+    "send_reset_link": "Enviarme el enlace de restablecimiento",
+    "send_me_back": "enviarme de vuelta",
+    "sign_in": "Iniciar sesión",
+    "sign_up": "Registrarse",
+    "to_the_sign_in": "a la pantalla de inicio de sesión.",
+    "forget_it": "Olvidarlo"
+  },
+  "Errors": {
+    "credentials_do_not_match": "Estas credenciales no coinciden con nuestros registros.",
+    "email_required": "El correo electrónico es obligatorio.",
+    "email_string": "El correo electrónico debe ser una cadena de texto.",
+    "email_invalid": "El correo electrónico no es válido.",
+    "email_lowercase": "El correo electrónico debe estar en minúsculas.",
+    "email_max_255": "El correo electrónico no debe ser mayor a 255 caracteres.",
+    "email_unique": "El correo electrónico ya ha sido tomado.",
+    "incorrect_password": "La contraseña proporcionada es incorrecta.",
+    "invalid_password_reset_token": "Este token de restablecimiento de contraseña no es válido.",
+    "name_required": "El nombre es obligatorio.",
+    "name_string": "El nombre debe ser una cadena de texto.",
+    "name_max_255": "El nombre no debe ser mayor a 255 caracteres.",
+    "password_required": "La contraseña es obligatoria.",
+    "password_string": "La contraseña debe ser una cadena de texto.",
+    "password_confirmed": "La confirmación de la contraseña no coincide.",
+    "password_min_8": "La contraseña debe tener al menos 8 caracteres.",
+    "token_required": "El token es obligatorio.",
+    "too_many_attempts": "Demasiados intentos de inicio de sesión. Intenta nuevamente en unos minutos.",
+    "unknown": "Error desconocido",
+    "wait_before_retrying": "Espera antes de volver a intentar",
+    "user_not_found_with_email": "No podemos encontrar un usuario con esa dirección de correo electrónico."
+  },
+  "Idioms": {
+    "en": "Inglés",
+    "es": "Español"
+  },
+  "Success": {
+    "password_reset_link_sent": "Hemos enviado tu enlace de restablecimiento de contraseña por correo electrónico.",
+    "password_reset_successful": "Tu contraseña ha sido restablecida."
+  }
+}

@@ -1,6 +1,6 @@
 volumes:
     postgres:
-        name: 'postgres16'
+        name: 'lifetracker-postgres17'
         driver: local
 
     redis:

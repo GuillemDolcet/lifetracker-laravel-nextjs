@@ -29,4 +29,14 @@ export const DropdownButton = ({ children, ...props }) => (
     </Menu.Item>
 )
 
+export const DropdownText = ({ children, ...props }) => (
+    <Menu.Item>
+        {({ active }) => (
+            <div className="dropdown-item cursor-pointer" {...props}>
+                {children}
+            </div>
+        )}
+    </Menu.Item>
+)
+
 export default DropdownLink
