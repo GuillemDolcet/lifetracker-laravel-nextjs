@@ -1,8 +1,8 @@
 'use client'
 
-import Button from '@/components/Button'
-import Input from '@/components/Input'
-import Label from '@/components/Label'
+import Button from '@/components/ui/Button'
+import Input from '@/components/ui/Input'
+import Label from '@/components/ui/Label'
 import {Link} from '@/i18n/routing';
 import {useState} from 'react'
 import {useTranslations} from "next-intl"

@@ -1,6 +1,6 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
-import ThemeToggle from "@/components/ThemeToggle";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ApplicationLogo from '@/components/ui/ApplicationLogo'
+import ThemeToggle from "@/components/ui/ThemeToggle";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
 export const metadata = {
     title: 'Laravel',

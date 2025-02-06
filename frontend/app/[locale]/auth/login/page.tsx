@@ -5,7 +5,7 @@ import {useTranslations} from "next-intl"
 import {GoogleOAuthProvider} from "@react-oauth/google";
 import GoogleLogin from "@/components/socials/GoogleLogin";
 import {Link} from '@/i18n/routing';
-import CardTitle from "@/components/CardTitle";
+import CardTitle from "@/components/ui/CardTitle";
 import {useAuth} from "@/hooks/auth";
 
 const Login = () => {

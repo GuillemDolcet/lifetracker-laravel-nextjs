@@ -1,7 +1,7 @@
 'use client'
 
 import {useTranslations} from "next-intl"
-import CardTitle from "@/components/CardTitle";
+import CardTitle from "@/components/ui/CardTitle";
 import {useAuth} from "@/hooks/auth";
 import PasswordResetForm from "@/components/forms/PasswordResetForm";
 

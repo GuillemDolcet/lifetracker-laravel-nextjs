@@ -21,7 +21,7 @@
     src: url('/fonts/inter/Inter-Bold.ttf') format('truetype');
 }
 
-.language-switcher {
+.dropdown-custom {
     position: absolute;
     inset: 0 0 auto auto;
     margin: 0;

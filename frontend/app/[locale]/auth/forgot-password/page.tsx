@@ -2,8 +2,8 @@
 
 import ForgotPasswordForm from "@/components/forms/ForgotPasswordForm";
 import {useTranslations} from "next-intl"
-import CardTitle from "@/components/CardTitle";
-import CardDescription from "@/components/CardDescription";
+import CardTitle from "@/components/ui/CardTitle";
+import CardDescription from "@/components/ui/CardDescription";
 import {Link} from "@/i18n/routing";
 import {useAuth} from "@/hooks/auth";
 

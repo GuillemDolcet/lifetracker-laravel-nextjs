@@ -2,7 +2,7 @@
 
 import {useTranslations} from "next-intl"
 import {Link} from '@/i18n/routing';
-import CardTitle from "@/components/CardTitle";
+import CardTitle from "@/components/ui/CardTitle";
 import RegisterForm from "@/components/forms/RegisterForm";
 import {useAuth} from "@/hooks/auth";
 

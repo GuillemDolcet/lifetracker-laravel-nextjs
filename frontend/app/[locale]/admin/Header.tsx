@@ -1,9 +1,9 @@
-import ApplicationLogo from "@/components/ApplicationLogo";
-import Dropdown from "@/components/Dropdown";
-import {DropdownText} from "@/components/DropdownLink";
+import ApplicationLogo from "@/components/ui/ApplicationLogo";
+import Dropdown from "@/components/ui/Dropdown";
+import {DropdownText} from "@/components/ui/DropdownLink";
 import { IconChevronDown } from '@tabler/icons-react';
 import {useTranslations} from "next-intl";
-import UserAvatar from "@/components/UserAvatar";
+import UserAvatar from "@/components/users/UserAvatar";
 
 const Header = ({ user, logout }) => {
     const translations = useTranslations('Auth')

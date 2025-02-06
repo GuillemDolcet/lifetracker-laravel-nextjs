@@ -5,8 +5,8 @@ import {useTransition, useState} from 'react';
 import {Locale, routing, usePathname, useRouter} from '@/i18n/routing';
 import {useLocale, useTranslations} from 'next-intl';
 import Image from "next/image";
-import Dropdown from "@/components/Dropdown";
-import {DropdownText} from "@/components/DropdownLink";
+import Dropdown from "@/components/ui/Dropdown";
+import {DropdownText} from "@/components/ui/DropdownLink";
 
 export default function LanguageSwitcher({ className }) {
     const router = useRouter();
